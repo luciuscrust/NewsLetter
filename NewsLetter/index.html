@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Newsletter</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .hidden-article {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo-title">
+      <img src="assets/logo.jpg" alt="Logo" class="logo" />
+      <h1>Newsletter</h1>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search articles..." />
+      <input type="submit" id="submit" value="Search">
+    </div>
+  </header>
+
+  <nav class="sidebar" id="sidebar">
+    <button id="menu-toggle">☰</button>
+    <ul id="menu-items">
+      <li><a href="#">Guyana News</a></li>
+      <li><a href="template/sports.html" >Sports</a></li>
+      <li><a href="template/letters.html" >Letters to the Editor</a></li>
+      <li><a href="#">Contact Information</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <section class="newspaper-image">
+      <img src="assets/newspaper.png" alt="Newspaper Cover" />
+    </section>
+
+    <section class="latest-news">
+      <h2>Latest News</h2>
+      <div id="latest-news-articles" class="news-grid">
+      </div>
+    </section>
+
+    <aside class="ads">
+      <h2>Advertisements</h2>
+      <div class="ad-carousel">
+        <div class="ad"><a href="https://guyanachronicle.com/?_dnlink=603447&aid=431108&t=1743939216"><img src="https://th.bing.com/th/id/OIP.axIfzYMp7RYoB5TzdhEMCgHaB6?w=341&h=90&c=7&r=0&o=5&pid=1.7" alt="Ad Banner 1"></a></div>
+        <div class="ad hidden"><a href="#"><img src="https://guyanachronicle.com/wp-content/uploads/angwp/items/641176/BIG-IDEAL-NEW-AD_New.jpg" alt="Ad Banner 2"></a></div>
+      </div>
+    </aside>
+
+    <section class="trending-news">
+      <h2>Trending News</h2>
+      <div class="trending-grid">
+      </div>
+    </section>
+
+    <section class="opinion">
+      <h2>Opinions & Letters</h2>
+      <article class="article">
+        <h3>Letter from a Reader</h3>
+        <p>Opinion snippet... <a href="#">Read More</a></p>
+      </article>
+    </section>
+
+    <section class="cartoons">
+      <h2>Editorial Cartoons</h2>
+      <div class="cartoon-grid">
+        <img src="assets/cartoon 1.jpeg" class="cartoon" alt="Cartoon 1" />
+        <img src="assets/cartoon 2.jpeg" class="cartoon" alt="Cartoon 2" />
+      </div>
+    </section>
+
+    <section class="international-news">
+      <h2>International News</h2>
+      <div id="international-news-articles" class="news-grid">
+        <div class="loader"></div>
+      </div>
+    </section>
+
+    <section class="subscribe-banner">
+      <h2>Subscribe to the Guyana Times</h2>
+      <p>Choose digital or print edition. Support independent journalism.</p>
+      <button>Subscribe Now</button>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-columns">
+      <div>
+        <h3>About the Newspaper</h3>
+        <p>Founded in 1990, delivering trusted news for over 30 years.</p>
+      </div>
+      <div>
+        <h3>Become a Subscriber</h3>
+        <p>Choose a plan and unlock full access to all news sections.</p>
+      </div>
+      <div>
+        <h3>Newsletter Signup</h3>
+        <form id="newsletter-form">
+          <input type="email" id="newsletter-email" placeholder="Enter your email" required />
+          <button type="submit">Sign Up</button>
+          <p id="newsletter-message" class="hidden"></p>
+        </form>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Place an Ad</a></li>
+          <li><a href="#">Archive</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
