@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Information</title>
+  <link rel="stylesheet" href="../css/conatct.css"/>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo-title">
+      <img src="../assets/logo.jpg" alt="Logo" class="logo" />
+      <h1>Newsletter</h1>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <button id="menu-toggle">☰</button>
+    <ul id="menu-items">
+      <li><a href="../index.html">Guyana News</a></li>
+      <li><a href="sports.html">Sports</a></li>
+      <li><a href="letters.html">Letters to the Editor</a></li>
+      <li><a href="#">Contact Information</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Placeholder -->
+  <main class="content contact-page">
+    <section class="contact-section">
+      <div class="contact-form-container">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" name="name" required />
+  
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="email" required />
+  
+          <label for="contact-purpose">Purpose</label>
+          <select id="contact-purpose" name="purpose" required>
+            <option value="">--Select--</option>
+            <option value="Feedback">Feedback</option>
+            <option value="Advertise">Place an Advertisement</option>
+            <option value="Corrections">Submit a Correction</option>
+            <option value="Other">Other</option>
+          </select>
+  
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" rows="5" required></textarea>
+  
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+  
+      <div class="contact-info-container">
+        <h2>Reach Us</h2>
+        <p><strong>Email:</strong> <a href="mailto:info@guyanatimes.gy">info@guyanatimes.gy</a></p>
+        <p><strong>Phone:</strong> +592-227-0709</p>
+        <p><strong>Facebook:</strong> <a href="https://www.facebook.com/guyanatimes" target="_blank">facebook.com/guyanatimes</a></p>
+      </div>
+    </section>
+  </main>
+  
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-columns">
+      <div>
+        <h3>About the Newspaper</h3>
+        <p>Founded in 1990, delivering trusted news for over 30 years.</p>
+      </div>
+      <div>
+        <h3>Become a Subscriber</h3>
+        <p>Choose a plan and unlock full access to all news sections.</p>
+      </div>
+      <div>
+        <h3>Newsletter Signup</h3>
+        <form id="newsletter-form">
+          <input type="email" id="newsletter-email" placeholder="Enter your email" required />
+          <button type="submit">Sign Up</button>
+          <p id="newsletter-message" class="hidden"></p>
+        </form>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="template/sports.html">Sports</a></li>
+            <li><a href="template/letters.html">Letters to Editor</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/contact.js"></script>
+</body>
+</html>

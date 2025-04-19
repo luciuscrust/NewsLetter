@@ -6,46 +6,16 @@ toggleBtn.addEventListener('click', () => {
   sidebar.classList.toggle('open');
 });
 
-// ---------------- Newsletter Form Handler ----------------
-document.getElementById('newsletter-form').addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const email = document.getElementById('newsletter-email').value.trim();
-  const message = document.getElementById('newsletter-message');
-
-  if (!email || !validateEmail(email)) {
-    message.textContent = "Please enter a valid email.";
-    message.style.color = "red";
-    message.classList.remove("hidden");
-    return;
-  }
-
-  const sheetURL = 'https://script.google.com/macros/s/AKfycbyPqnBU19t9ucXB07XPucLl1Ja6TPR6hoFQ8DiCVCF7YSI71mwiXkybFTMrS3wLyEv4/exec';
-
-  fetch(sheetURL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email })
-  })
-  .then(() => {
-    document.getElementById('newsletter-form').reset();
-    message.textContent = "Thanks for subscribing!";
-    message.style.color = "green";
-    message.classList.remove("hidden");
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    message.textContent = "Something went wrong. Please try again later.";
-    message.style.color = "red";
-    message.classList.remove("hidden");
-  });
-});
-
 // ---------------- Popup Subscription Form Handler ----------------
-document.getElementById("sub-btn").addEventListener("click", () => {
+document.getElementById("sub-btn2").addEventListener("click", (e) => {
+  e.preventDefault();
   document.getElementById("popup-form").classList.add("show");
 });
+
+document.getElementById("sub-btn").addEventListener("click", function () {
+  document.getElementById("popup-form").classList.add("show");
+});
+
 
 document.getElementById("close-popup").addEventListener("click", () => {
   document.getElementById("popup-form").classList.remove("show");

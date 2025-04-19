@@ -7,9 +7,24 @@
   <link rel="stylesheet" href="../css/sports.css" />
 </head>
 <body>
-  <header class="header">
-    <h1>Latest Sports News</h1>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo-title">
+      <img src="../assets/logo.jpg" alt="Logo" class="logo" />
+      <h1>Newsletter</h1>
+    </div>
   </header>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <button id="menu-toggle">☰</button>
+    <ul id="menu-items">
+      <li><a href="../index.html">Guyana News</a></li>
+      <li><a href="sports.html">Sports</a></li>
+      <li><a href="letters.html">Letters to the Editor</a></li>
+      <li><a href="contact.html">Contact Information</a></li>
+    </ul>
+  </nav>
 
   <main class="sports-container">
     <section class="sports-articles" id="sports-articles">
@@ -17,8 +32,34 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; 2025 Sports Daily. All rights reserved.</p>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-columns">
+      <div>
+        <h3>About the Newspaper</h3>
+        <p>Founded in 1990, delivering trusted news for over 30 years.</p>
+      </div>
+      <div>
+        <h3>Become a Subscriber</h3>
+        <p>Choose a plan and unlock full access to all news sections.</p>
+      </div>
+      <div>
+        <h3>Newsletter Signup</h3>
+        <form id="newsletter-form">
+          <input type="email" id="newsletter-email" placeholder="Enter your email" required />
+          <button type="submit">Sign Up</button>
+          <p id="newsletter-message" class="hidden"></p>
+        </form>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="template/contact.html">Contact Us</a></li>
+            <li><a href="template/sports.html">Sports</a></li>
+            <li><a href="template/letters.html">Letters to Editor</a></li>
+        </ul>
+      </div>
+    </div>
   </footer>
 
   <script src="../js/sports.js"></script>

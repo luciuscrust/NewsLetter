@@ -1,3 +1,11 @@
+// ---------------- Sidebar Toggle ----------------
+const toggleBtn = document.getElementById('menu-toggle');
+const sidebar = document.getElementById('sidebar');
+
+toggleBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('open');
+});
+
 const API_KEY = "da521dc7acfe401d870388a473a27a51"; 
 const API_URL = `https://newsapi.org/v2/top-headlines?category=sports&language=en&pageSize=9&apiKey=${API_KEY}`;
 
