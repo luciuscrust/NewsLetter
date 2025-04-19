@@ -119,9 +119,20 @@ img {
   display: flex;
 }
 
+button {
+  background-color: #005a8d;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
 
-.hidden {
-  display: none;
+button:hover {
+  background-color: #003f5e;
+}
+
+button:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
 }
 
 /* === HEADER === */
@@ -154,7 +165,6 @@ img {
   width: 60px;
   height: auto;
 }
-
 
 /* === SIDEBAR === */
 .sidebar {
@@ -224,6 +234,32 @@ footer,
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+}
+
+/* === FORMS === */
+#newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#newsletter-form input[type="email"] {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+
+#newsletter-form button {
+  background-color: #0074D9;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#newsletter-form button:hover {
+  background-color: #005fa3;
 }
 
 /* === CONTACT PAGE === */
@@ -296,37 +332,6 @@ footer,
 
 .contact-form-container button:hover {
   background-color: #0056b3;
-}
-
-/* === NEWSLETTER FORM === */
-#newsletter-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-#newsletter-form input[type="email"] {
-  padding: 0.5rem;
-  border-radius: 5px;
-  border: none;
-}
-
-#newsletter-form button {
-  background-color: #0074D9;
-  color: white;
-  padding: 0.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#newsletter-form button:hover {
-  background-color: #005fa3;
-}
-
-#newsletter-message {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
 }
 
 /* === SPORTS PAGE === */
@@ -435,13 +440,70 @@ footer,
 }
 
 /* === MEDIA QUERIES === */
-@media screen and (max-width: 768px) {
-  .contact-section {
-    grid-template-columns: 1fr;
+
+/* Small screens (phones) */
+@media screen and (max-width: 480px) {
+  .site-header {
+    padding: 1rem;
   }
 
   .logo-title {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+
+  .sports-articles {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Medium screens (tablets) */
+@media screen and (max-width: 768px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+
+  .sports-articles {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .footer-columns {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .article img {
+    height: 150px;
+  }
+
+  .article-content h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Large screens (desktops) */
+@media screen and (min-width: 1024px) {
+  .sports-articles {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .footer-columns {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .article img {
+    height: 200px;
   }
 }

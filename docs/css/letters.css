@@ -165,6 +165,7 @@ button:focus {
   background-color: #0056b3;
 }
 
+/* === HEADER === */
 .site-header {
   background-color: #f5f5f5;
   border-bottom: 1px solid #ccc;
@@ -225,7 +226,7 @@ button:focus {
   border-radius: 4px;
   cursor: pointer;
   z-index: 1001;
-  width:50px;
+  width: 50px;
 }
 
 .sidebar ul {
@@ -249,14 +250,10 @@ button:focus {
 }
 
 /* === FOOTER === */
-footer,
-.footer {
+footer {
   background-color: #222;
   color: white;
   padding: 2rem;
-  text-align: center;
-  font-size: 0.95rem;
-  margin-top: 2rem;
 }
 
 .footer-columns {
@@ -265,14 +262,118 @@ footer,
   gap: 2rem;
 }
 
-/* === MEDIA QUERIES === */
-@media screen and (max-width: 768px) {
-  .contact-section {
-    grid-template-columns: 1fr;
-  }
+/* === FORMS === */
+#newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
+#newsletter-form button {
+  background-color: #0074D9;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#newsletter-form button:hover {
+  background-color: #005fa3;
+}
+
+#newsletter-message {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* === MEDIA QUERIES === */
+
+/* For small devices (phones in portrait) */
+@media screen and (max-width: 480px) {
   .logo-title {
     flex-direction: column;
     align-items: center;
+    margin: 1rem 0;
+  }
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .submit-form {
+    margin-top: 2rem;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
+
+  #menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .popup-content {
+    width: 90%;
+  }
+}
+
+/* For tablets (landscape and portrait) */
+@media screen and (max-width: 768px) {
+  .logo-title {
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
+  }
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .submit-form {
+    max-width: 400px;
+    margin: 2rem auto;
+  }
+
+  .popup-content {
+    width: 90%;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #menu-toggle {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* For larger screens (desktops and laptops) */
+@media screen and (min-width: 1024px) {
+  .sidebar {
+    width: 250px;
+  }
+
+  .footer-columns {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .popup-content {
+    max-width: 480px;
   }
 }
