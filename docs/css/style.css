@@ -250,7 +250,7 @@ aside {
   transition: transform 0.2s ease;
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width:300px;
 }
 
 .article:hover {
@@ -323,7 +323,7 @@ aside.ads .ad {
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 8px;
-  height: 350px;
+  height:350px;
 }
 
 .ad-carousel {
@@ -411,7 +411,7 @@ footer {
   text-align: center;
   padding: 2rem;
   border-radius: 5px;
-  height: 250px;
+  height:250px;
 }
 
 .subscribe-banner h2 {
@@ -433,60 +433,19 @@ footer {
   background-color: #ddd;
 }
 
-
 /* === MEDIA QUERIES === */
-@media screen and (max-width: 1024px) {
-  /* Tablet view adjustments */
-  .content {
-    grid-template-columns: 1fr 2fr;
-  }
-
-  .search-bar input {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .logo-title {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 @media screen and (max-width: 768px) {
-  /* Mobile view adjustments */
   .content {
     grid-template-columns: 1fr;
-    padding: 1rem;
   }
 
-  .sidebar {
-    width: 200px;
-  }
-
-  .sidebar.open {
-    left: 0;
+  .search-bar input {
+    width: 100%;
+    margin-top: 1rem;
   }
 
   .logo-title {
     flex-direction: column;
     align-items: center;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .search-bar input {
-    width: 100%;
-  }
-
-  .article {
-    width: 100%;
-  }
-
-  .subscribe-banner {
-    padding: 1rem;
-  }
-
-  .footer-columns {
-    grid-template-columns: 1fr;
   }
 }

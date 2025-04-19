@@ -165,7 +165,6 @@ button:focus {
   background-color: #0056b3;
 }
 
-/* === HEADER === */
 .site-header {
   background-color: #f5f5f5;
   border-bottom: 1px solid #ccc;
@@ -226,7 +225,7 @@ button:focus {
   border-radius: 4px;
   cursor: pointer;
   z-index: 1001;
-  width: 50px;
+  width:50px;
 }
 
 .sidebar ul {
@@ -267,92 +266,13 @@ footer,
 }
 
 /* === MEDIA QUERIES === */
-
-/* For small devices (phones in portrait) */
-@media screen and (max-width: 480px) {
-  .logo-title {
-    flex-direction: column;
-    align-items: center;
-    margin: 1rem 0;
-  }
-
-  .sidebar {
-    width: 220px;
-  }
-
-  .sidebar.open {
-    left: 0;
-  }
-
-  .submit-form {
-    margin-top: 2rem;
-  }
-
-  .form-buttons {
-    flex-direction: column;
-  }
-
-  .footer-columns {
-    grid-template-columns: 1fr;
-  }
-
-  #menu-toggle {
-    width: 40px;
-    height: 40px;
-  }
-
-  .popup-content {
-    width: 90%;
-  }
-}
-
-/* For tablets (landscape and portrait) */
 @media screen and (max-width: 768px) {
-  .logo-title {
-    flex-direction: column;
-    align-items: center;
-    margin: 1rem 0;
-  }
-
-  .sidebar {
-    width: 220px;
-  }
-
-  .footer-columns {
+  .contact-section {
     grid-template-columns: 1fr;
   }
 
-  .submit-form {
-    max-width: 400px;
-    margin: 2rem auto;
-  }
-
-  .popup-content {
-    width: 90%;
-  }
-
-  .form-buttons {
+  .logo-title {
     flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  #menu-toggle {
-    width: 50px;
-    height: 50px;
-  }
-}
-
-/* For larger screens (desktops and laptops) */
-@media screen and (min-width: 1024px) {
-  .sidebar {
-    width: 250px;
-  }
-
-  .footer-columns {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .popup-content {
-    max-width: 480px;
+    align-items: center;
   }
 }
