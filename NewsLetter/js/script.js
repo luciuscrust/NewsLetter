@@ -1,4 +1,4 @@
-// Toggle Sidebar
+// ---------------- Sidebar Toggle ----------------
 const toggleBtn = document.getElementById('menu-toggle');
 const sidebar = document.getElementById('sidebar');
 
@@ -6,7 +6,7 @@ toggleBtn.addEventListener('click', () => {
   sidebar.classList.toggle('open');
 });
 
-// Newsletter Form Handler
+// ---------------- Newsletter Form Handler ----------------
 document.getElementById('newsletter-form').addEventListener('submit', function (e) {
   e.preventDefault();
 
@@ -24,38 +24,77 @@ document.getElementById('newsletter-form').addEventListener('submit', function (
 
   fetch(sheetURL, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email })
   })
-  .then(res => res.text())
-  .then(data => {
+  .then(() => {
     document.getElementById('newsletter-form').reset();
     message.textContent = "Thanks for subscribing!";
     message.style.color = "green";
     message.classList.remove("hidden");
   })
   .catch(error => {
-    console.error("Error:", error);
+    console.error('Error:', error);
     message.textContent = "Something went wrong. Please try again later.";
     message.style.color = "red";
     message.classList.remove("hidden");
   });
 });
 
-function validateEmail(email) {
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return re.test(email.toLowerCase());
-}
+// ---------------- Popup Subscription Form Handler ----------------
+document.getElementById("sub-btn").addEventListener("click", () => {
+  document.getElementById("popup-form").classList.add("show");
+});
 
+document.getElementById("close-popup").addEventListener("click", () => {
+  document.getElementById("popup-form").classList.remove("show");
+});
 
-// Email Validation
+document.getElementById("sub-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("sub-name").value.trim();
+  const email = document.getElementById("sub-email").value.trim();
+  const address = document.getElementById("sub-add").value.trim();
+  const course = document.getElementById("sub-opp").value;
+  const message = document.getElementById("sub-message");
+
+  if (!email || !validateEmail(email)) {
+    message.textContent = "Please enter a valid email.";
+    message.style.color = "red";
+    message.classList.remove("hidden");
+    return;
+  }
+
+  const sheetURL = 'https://script.google.com/macros/s/AKfycbyPqnBU19t9ucXB07XPucLl1Ja6TPR6hoFQ8DiCVCF7YSI71mwiXkybFTMrS3wLyEv4/exec';
+
+  fetch(sheetURL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email, address, course })
+  })
+  .then(() => {
+    message.textContent = "Subscription submitted!";
+    message.style.color = "green";
+    message.classList.remove("hidden");
+    document.getElementById("sub-form").reset();
+  })
+  .catch(err => {
+    console.error("Submission error:", err);
+    message.textContent = "Something went wrong.";
+    message.style.color = "red";
+    message.classList.remove("hidden");
+  });
+});
+
+// ---------------- Email Validation ----------------
 function validateEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-// Ad Rotation
+// ---------------- Ad Rotation ----------------
 const ads = document.querySelectorAll('.ad-carousel .ad');
 let currentAd = 0;
 
@@ -66,18 +105,17 @@ function rotateAds() {
 }
 setInterval(rotateAds, 5000);
 
-// Search Bar
+// ---------------- Search Bar ----------------
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("submit");
 
-// Load News Articles Dynamically via API
+// ---------------- Load News ----------------
 const latestNewsSection = document.querySelector(".latest-news");
 const latestNews = document.querySelector(".news-grid");
 const opinionSection = document.querySelector(".opinion");
 const internationalSection = document.querySelector(".international-news");
-const trendingSection = document.querySelector(".trending-grid")
+const trendingSection = document.querySelector(".trending-grid");
 
-// Your NewsAPI key
 const API_KEY = "da521dc7acfe401d870388a473a27a51";
 const BASE_URL = `https://newsapi.org/v2/top-headlines?language=en&pageSize=9&apiKey=${API_KEY}`;
 
@@ -103,31 +141,26 @@ async function fetchNews() {
     const data = await res.json();
     const articles = data.articles || [];
 
-    // Add to Latest News
     articles.slice(0, 3).forEach(article => {
       latestNews.appendChild(createArticle(article));
     });
 
-    // Add to International
     internationalSection.innerHTML = "<h2>International News</h2>";
     articles.slice(6, 9).forEach(article => {
       internationalSection.appendChild(createArticle(article));
     });
 
-    // Adding to trending News
     articles.slice(6, 9).forEach(article => {
       trendingSection.appendChild(createArticle(article));
     });
 
-    // Setup search after articles are loaded
     setupSearch();
   } catch (err) {
     console.error("Error fetching news:", err);
     latestNewsSection.innerHTML += "<p>Failed to load news articles.</p>";
   }
 }
-
-// Search filter
+// ---------------- Search Setup ----------------
 function setupSearch() {
   const allArticles = document.querySelectorAll(".article");
 
@@ -144,6 +177,4 @@ function setupSearch() {
     });
   });
 }
-
-// Load news on page load
 window.addEventListener("DOMContentLoaded", fetchNews);
