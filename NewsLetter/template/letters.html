@@ -7,6 +7,25 @@
   <link rel="stylesheet" href="../css/letters.css">
 </head>
 <body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo-title">
+      <img src="../assets/logo.jpg" alt="Logo" class="logo" />
+      <h1>Newsletter</h1>
+    </div>
+  </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+      <button id="menu-toggle">☰</button>
+      <ul id="menu-items">
+        <li><a href="../index.html">Guyana News</a></li>
+        <li><a href="sports.html">Sports</a></li>
+        <li><a href="#">Letters to the Editor</a></li>
+        <li><a href="contact.html">Contact Information</a></li>
+      </ul>
+    </nav>
+  
 
   <h1>Letters from Our Readers</h1>
 
@@ -30,6 +49,65 @@
       <button type="submit">Send Letter</button>
     </form>
   </section>
+
+      <!-- Popup Form -->
+<div class="popup-overlay" id="popup-form">
+  <div class="popup-content">
+    <form id="sub-form">
+      <legend>Subscription</legend>
+
+      <label for="sub-name">Name</label>
+      <input type="text" name="name" id="sub-name" required>
+
+      <label for="sub-email">Email</label>
+      <input type="email" name="email" id="sub-email" required>
+
+      <label for="sub-add">Address</label>
+      <input type="text" name="address" id="sub-add">
+
+      <label for="sub-opp">Courses</label>
+      <select name="course" id="sub-opp">
+        <option value="Prints">Prints</option>
+        <option value="Digital">Digital</option>
+      </select>
+
+      <div class="form-buttons">
+        <button type="submit">Submit</button>
+        <button type="button" id="close-popup">Close</button>
+      </div>
+
+      <p id="sub-message" class="hidden"></p>
+    </form>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-columns">
+      <div>
+        <h3>About the Newspaper</h3>
+        <p>Founded in 1990, delivering trusted news for over 30 years.</p>
+      </div>
+      <div>
+        <h3>Become a Subscriber</h3>
+        <p>Choose a plan and unlock full access to all news sections.</p>
+      </div>
+      <div>
+        <h3>Newsletter Signup</h3>
+        <form id="newsletter-form">
+          <button id="sub-btn">Sign Up</button>
+        </form>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="sports.html">Sports</a></li>
+            <li><a href="#">Letters to Editor</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
   <script src="../js/letters.js"></script>
 </body>
